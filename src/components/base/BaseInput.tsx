@@ -13,6 +13,7 @@ function BaseInput ({ label, name, className, ...props }: BaseInputProps): JSX.E
       </label>
       <input
         id={name}
+        name={name}
         className={`h-10 p-2 rounded border-2 border-gray-300 my-1 ${className}`}
         {...props}
       />
