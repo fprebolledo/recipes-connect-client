@@ -5,7 +5,7 @@ interface BaseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string
 }
 
-function BaseButton ({ theme = 'primary', label, className, ...props }: BaseButtonProps): JSX.Element {
+function BaseButton ({ theme = 'primary', label, className, ...props }: BaseButtonProps) {
   const classes = {
     primary: 'bg-black text-white',
     secondary: 'border-2 border-black',

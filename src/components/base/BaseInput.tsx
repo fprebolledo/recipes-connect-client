@@ -5,7 +5,7 @@ interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string
 }
 
-function BaseInput ({ label, name, className, ...props }: BaseInputProps): JSX.Element {
+function BaseInput ({ label, name, className, ...props }: BaseInputProps) {
   return (
     <div className='flex flex-col'>
       <label htmlFor={name}>
