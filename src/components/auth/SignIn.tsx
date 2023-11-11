@@ -1,16 +1,16 @@
 import { useMutation } from 'react-query'
 import { BaseInput, BaseButton } from '@/components/base/'
-import { create } from '@/api/users'
+import { signIn } from '@/api/users'
 import { useUserForm } from '@/hooks/useUserForm'
 
 function SignIn () {
   const { userForm, handleUserInputChange } = useUserForm()
-  const { data, mutate, isLoading, isError, isSuccess } = useMutation(create)
+  const { data, mutate, isLoading, isError, isSuccess } = useMutation(signIn)
 
   function logIn (): void {
     mutate(userForm)
     if (data !== undefined) {
-      localStorage.setItem('token', data.token)
+      localStorage.setItem('token', JSON.stringify(data))
       window.location.href = '/'
     }
   }
